@@ -574,6 +574,17 @@ function startGlitter(){
   }
   animateGlitter();
 }
+<script>
+document.addEventListener('visibilitychange', function() {
+  const audio = document.querySelector('audio'); // finds your audio element
+  if (audio) {
+    if (document.hidden) {
+      audio.pause();
+    } else {
+      audio.play().catch(() => {}); // resumes when they come back to the tab
+    }
+  }
+});
 </script>
 
 </body>
